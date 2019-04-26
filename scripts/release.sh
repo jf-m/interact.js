@@ -4,11 +4,13 @@ PATH=$PATH:$PWD/node_modules/.bin
 RELEASE_BRANCH=$1
 NEW_VERSION=$2
 
-ROOT=$(dirname $(readlink -f $0))/..
+ROOT=$(dirname $(readlink -f $0))
 if [ -z "$ROOT" ]
 then
-    ROOT=$(dirname $0)/..
+    ROOT=$(dirname $0)
 fi
+ROOT=$ROOT/..
+echo $ROOT
 INITIAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
 main() {
