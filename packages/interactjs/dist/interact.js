@@ -4290,13 +4290,16 @@ function __install_3(scope) {
     }
 
     var dropState = interaction.dropState;
-    dropState.activeDrops = null;
-    dropState.events = null;
-    dropState.cur.dropzone = null;
-    dropState.cur.element = null;
-    dropState.prev.dropzone = null;
-    dropState.prev.element = null;
-    dropState.rejected = false;
+
+    if (dropState) {
+      dropState.activeDrops = null;
+      dropState.events = null;
+      dropState.cur.dropzone = null;
+      dropState.cur.element = null;
+      dropState.prev.dropzone = null;
+      dropState.prev.element = null;
+      dropState.rejected = false;
+    }
   });
   /**
    *
